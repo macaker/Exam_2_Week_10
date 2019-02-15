@@ -80,7 +80,7 @@ def test_draw_a_picture():
 #   The is_prime function is supplied.  Do NOT change is_prime
 #     """
 ###############################################################################
-# TODO: 1  READ the doc-string for the is_prime function defined below.
+# DONE: 1  READ the doc-string for the is_prime function defined below.
 # You do NOT need to understand its implementations,
 # just its specification (per the doc-string).
 # You should  ** CALL **  functions as needed in implementing the
@@ -128,6 +128,16 @@ def is_prime(n):
 #
 #
 def draw_a_picture(point, n, color, window):
+    circle= rg.Circle(point, 100)
+    rectangle = rg.Rectangle(rg.Point(point.x - 80, point.y - 40), rg.Point(point.x + 80, point.y + 40))
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+    window.render(.5)
+
+
+
+
+
 
     pass
 
