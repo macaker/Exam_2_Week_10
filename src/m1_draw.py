@@ -111,7 +111,7 @@ def is_prime(n):
     return True
 
 # -------------------------------------------------------------------------
-#  TODO: 2. Implement and test the draw_a_picture function.
+#  DONE: 2. Implement and test the draw_a_picture function.
 #           Tests have been written for you (above in main).
 #  We suggest breaking this into multiple commits.
 #     Can you show the correct circle?
@@ -132,6 +132,14 @@ def draw_a_picture(point, n, color, window):
     rectangle = rg.Rectangle(rg.Point(point.x - 80, point.y - 40), rg.Point(point.x + 80, point.y + 40))
     circle.attach_to(window)
     rectangle.attach_to(window)
+    for k in range(n):
+        line = rg.Line(point, rg.Point(point.x - 80, point.y - 40))
+        line.end.move_by(160*k/(n-1), 0)
+        if is_prime(k+1):
+            line.color = 'orange'
+        else:
+            line.color = color
+        line.attach_to(window)
     window.render(.5)
 
 
